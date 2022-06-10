@@ -2,7 +2,10 @@
   "name": "cinny-electron",
   "description": "Cinny desktop app built with Electron",
   "version": "2.0.4",
-  "author": "Frolleks",
+  "author": {
+    "name": "Frolleks",
+    "email": "frolleks@hotmail.com"
+  },
   "main": "src/main.js",
   "license": "MIT",
   "scripts": {
