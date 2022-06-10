@@ -5,7 +5,14 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "build:webapp": "cd cinny && git checkout release-2.0.4  && npm ci --force && npm run build && cd .."
+    "build:webapp": "cd cinny && git checkout release-2.0.4  && npm ci --force && npm run build && cd ..",
+    "build": "electron-builder",
+    "build:mac": "electron-builder -m",
+    "build:win": "electron-builder -w",
+    "build:linux": "electron-builder -l",
+    "build:linux:appimage": "electron-builder -l appimage",
+    "build:linux:deb": "electron-builder -l deb",
+    "build:linux:tar.gz": "electron-builder -l tar.gz"
   },
   "devDependencies": {
     "electron": "^19.0.4",
