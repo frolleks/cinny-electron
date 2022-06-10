@@ -1,0 +1,14 @@
+{
+  "name": "cinny-electron",
+  "version": "0.0.1",
+  "main": "src/main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build:webapp": "cd cinny && git checkout release-2.0.4  && npm ci --force && npm run build && cd .."
+  },
+  "devDependencies": {
+    "electron": "^19.0.4",
+    "electron-builder": "^23.0.3"
+  }
+}
