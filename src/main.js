@@ -3,9 +3,9 @@ const path = require('path');
 
 const createWindow = () => {
     const mainWindow = new BrowserWindow({
+      backgroundColor: '#26292c',
       width: 1280,
       height: 800,
-      backgroundColor: '#26292c'
     });  
     mainWindow.loadFile(path.join(__dirname, '../cinny/dist/index.html'));
 }
