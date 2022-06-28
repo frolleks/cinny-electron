@@ -7,7 +7,7 @@ const createWindow = () => {
       width: 1280,
       height: 800,
     });  
-    mainWindow.loadFile(path.join(__dirname, '../cinny/dist/index.html'));
+    mainWindow.loadFile(path.join(__dirname, '..', 'cinny', 'dist', 'index.html'));
 }
 
 app.whenReady().then(() => {
