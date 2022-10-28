@@ -20,7 +20,7 @@
     "build:linux:tar.gz": "electron-builder -l tar.gz"
   },
   "devDependencies": {
-    "electron": "^19.0.6",
-    "electron-builder": "^23.1.0"
+    "electron": "^21.2.0",
+    "electron-builder": "^23.6.0"
   }
 }
