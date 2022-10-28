@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, shell } = require("electron");
 const path = require("path");
 
 function createWindow() {
@@ -10,11 +10,17 @@ function createWindow() {
   mainWindow.loadFile(
     path.join(__dirname, "..", "cinny", "dist", "index.html")
   );
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    // open url in a browser and prevent default
+    shell.openExternal(url);
+    return { action: "deny" };
+    // this does not work for some reason
+  });
 }
 
 app.whenReady().then(() => {
   createWindow();
-  
+
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
