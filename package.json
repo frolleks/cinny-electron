@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "build:webapp": "cd cinny && npm ci --force && npm run build && cd ..",
+    "build:webapp": "cd cinny && npm i && npm run build",
     "build": "electron-builder",
     "build:mac": "electron-builder -m",
     "build:win": "electron-builder -w",
