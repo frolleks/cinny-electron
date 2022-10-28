@@ -10,12 +10,6 @@ function createWindow() {
   mainWindow.loadFile(
     path.join(__dirname, "..", "cinny", "dist", "index.html")
   );
-  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
-    // open url in a browser and prevent default
-    shell.openExternal(url);
-    return { action: "deny" };
-    // this does not work for some reason
-  });
 }
 
 app.whenReady().then(() => {
@@ -28,4 +22,15 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+app.on("web-contents-created", (_, contents) => {
+  contents.setWindowOpenHandler(({ url }) => {
+    if (url.startsWith("http:", "https:", "mailto:")) {
+      setImmediate(() => {
+        shell.openExternal(url);
+      });
+    }
+    return { action: "deny" };
+  });
 });
