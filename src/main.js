@@ -6,6 +6,7 @@ function createWindow() {
     backgroundColor: "#26292c",
     width: 1280,
     height: 800,
+    autoHideMenuBar: true,
   });
   mainWindow.loadFile(
     path.join(__dirname, "..", "cinny", "dist", "index.html")
